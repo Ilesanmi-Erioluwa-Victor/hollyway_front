@@ -6,7 +6,7 @@ interface Pages {
   icon?: any;
 }
 
-export const Navpages: Pages[] = [
+export const Nav_pages: Pages[] = [
   {
     name: 'Deals Today',
     id: 1,
@@ -32,5 +32,15 @@ export const Navpages: Pages[] = [
   {
     name: 'Pages',
     id: 5,
+  },
+
+  {
+    name: 'Fresh',
+    id: 6,
+  },
+
+  {
+    name: 'PDF',
+    id: 7,
   },
 ];
