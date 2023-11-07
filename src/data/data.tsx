@@ -44,3 +44,5 @@ export const Nav_pages: Pages[] = [
     id: 7,
   },
 ];
+
+

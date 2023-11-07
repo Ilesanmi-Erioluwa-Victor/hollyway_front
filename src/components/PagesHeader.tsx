@@ -19,7 +19,7 @@ const PagesHeader = () => {
           return (
             <Link
               key={page.id}
-              className={`flex items-center text-[1.1rem]`}
+              className={`flex items-center text-[1rem] hover:text-yellow-400 transition-all`}
               href={'.'}
             >
               {page.icon && (
