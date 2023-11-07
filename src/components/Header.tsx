@@ -1,10 +1,10 @@
 'use client';
-import Link from "next/link"
+import { useState } from 'react';
+import Link from 'next/link';
 
 import Select from 'react-select';
 import { BsCart, BsSearch } from 'react-icons/bs';
 import { AiOutlineUser } from 'react-icons/ai';
-
 
 const Header = () => {
   const options = [
@@ -12,6 +12,21 @@ const Header = () => {
     { value: 'strawberry', label: 'Strawberry' },
     { value: 'vanilla', label: 'Vanilla' },
   ];
+
+  const [cartItems, setCartItems] = useState<string[] | null>([]);
+  const [showEmptyCartMessage, setShowEmptyCartMessage] = useState<
+    boolean | null
+  >(false);
+
+  const handleMouseOver = () => {
+    if (cartItems?.length === 0) {
+      setShowEmptyCartMessage(true);
+    }
+  };
+
+  const handleMouseOut = () => {
+    setShowEmptyCartMessage(false);
+  };
 
   return (
     <nav className='flex flex-col w-full'>
@@ -41,15 +56,20 @@ const Header = () => {
           <h2 className='text-[1.5rem] font-semibold leading-none'>
             08081495166
           </h2>
-          <span className='text-sm'>Support 24/7</span>
+          <span className='text-sm text-gray-400'>Support 24/7</span>
         </p>
 
         <div className='flex gap-5'>
           <p className='text-[1.5rem]'>
             <AiOutlineUser />
           </p>
-          <Link href={"/"} className='flex relative gap-5'>
-            <span className='absolute bg-orange-500 px-[3px] block rounded-sm top-[-15px] right-[70%]'>
+          <Link
+            href={'/'}
+            className='flex relative gap-5'
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+          >
+            <span className='absolute bg-orange-500 px-[3px] block rounded-sm top-[-15px] right-[70%] text-[0.9rem]'>
               {0}
             </span>
             <span className='text-[1.5rem] relative'>
@@ -60,6 +80,14 @@ const Header = () => {
                 Your Cart
               </p>
               <h2 className='text-sm font-semibold'># 0.00</h2>
+              {showEmptyCartMessage && cartItems?.length === 0 && (
+                <>
+                  <span className='w-0 h-0 border-solid  border top-border  block absolute bottom-[-1.8rem] right-[3rem] transition-all'></span>
+                  <p className='text-sm absolute w-[20rem] top-[4rem] p-5 text-center text-gray-400 right-0 block border bg-white transition-all'>
+                    No products in the cart.
+                  </p>
+                </>
+              )}
             </div>
           </Link>
         </div>
