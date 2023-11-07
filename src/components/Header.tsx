@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Select from 'react-select';
 import { BsCart, BsSearch } from 'react-icons/bs';
 import { AiOutlineUser } from 'react-icons/ai';
+import { PagesHeader } from '.';
 
 const Header = () => {
   const options = [
@@ -93,6 +94,7 @@ const Header = () => {
         </div>
       </main>
       <hr />
+      <PagesHeader />
     </nav>
   );
 };
