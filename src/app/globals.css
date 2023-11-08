@@ -14,32 +14,74 @@
   border-top-color: transparent;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid ;
+  border-bottom: 10px solid;
 }
 
-.get .slick-next, .get .slick-prev {
+.get .slick-next,
+.get .slick-prev {
   top: 90% !important;
   background: white !important;
   text-align: center !important;
-  border-radius : 0.2rem !important;
+  border-radius: 0.2rem !important;
 }
 
-.get .slick-next{
+.get .slick-next {
   right: 20px !important;
 }
 
 .get .slick-prev {
-  left : 88% !important;
+  left: 88% !important;
   z-index: 1 !important;
 }
 
-.get .slick-prev::before, .slick-next::before {
+.get .slick-prev::before,
+.slick-next::before {
   color: black !important;
 }
 
-.get .slick-prev, .slick-next {
-  width : 35px !important;
+.get .slick-prev,
+.slick-next {
+  width: 35px !important;
   height: 35px !important;
 }
 
+.cat .slick-next,
+.cat .slick-prev {
+  top: -20% !important;
+  background: #f7f7f6 !important;
+  text-align: center !important;
+  border-radius: 0.2rem !important;
+}
 
+.cat .slick-prev {
+  left: 92% !important;
+  z-index: 1 !important;
+}
+
+.cat .slick-next{
+  right: 0 !important;
+}
+
+.cat .slick-prev,
+.slick-next {
+  width: 35px !important;
+  height: 35px !important;
+}
+
+.cat .slick-prev::before,
+.slick-next::before {
+  color: black !important;
+}
+
+.cat .slick-list {
+  margin: 0 calc(-30px / 2) !important;
+  padding-bottom: 7.5rem !important;
+}
+
+.hove:hover {
+  background-color: #fff !important;
+  -webkit-box-shadow: 0 30px 40px 0 rgba(131, 132, 135, 0.15);
+  -moz-box-shadow: 0 30px 40px 0 rgba(131, 132, 135, 0.15);
+  box-shadow: 0 30px 40px 0 rgba(131, 132, 135, 0.15);
+  transition: 0.5s;
+}
