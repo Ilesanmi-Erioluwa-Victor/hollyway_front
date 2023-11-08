@@ -16,3 +16,28 @@
   border-right: 10px solid transparent;
   border-bottom: 10px solid ;
 }
+
+.get .slick-next, .get .slick-prev {
+  top: 90% !important;
+  background: white !important;
+  text-align: center !important;
+  border-radius : 0.2rem !important;
+}
+
+.get .slick-next{
+  right: 20px !important;
+}
+
+.get .slick-prev {
+  left : 88% !important;
+  z-index: 1 !important;
+}
+
+.get .slick-prev::before, .slick-next::before {
+  color: black !important;
+}
+
+.get .slick-prev, .slick-next {
+  width : 35px !important;
+  height: 35px !important;
+}
