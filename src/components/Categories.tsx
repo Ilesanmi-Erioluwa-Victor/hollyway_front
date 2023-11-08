@@ -60,7 +60,7 @@ const Categories = () => {
               <h3 className='text-[2rem] font-semibold'>Browse By Category</h3>
             </div>
             <article className='w-full bg-white'>
-              <ul className='relative mx-[calc(30px/2)] flex flex-col gap-6'>
+              <ul className='relative flex flex-col gap-6'>
                 <Slider
                   {...settings}
                   className='cat'
