@@ -62,7 +62,7 @@ const Features = () => {
         <article className='md:w-full flex relative'>
           <div className='p-[0.625rem] flex relative content-start w-full flex-wrap'>
             <div className='w-full'>
-              <div className='pb-[2.8125rem] justify-start flex items-center'>
+              <div className=' justify-start flex items-center'>
                 <h3 className='text-[1.875rem] leading-[1rem]'>
                   Featured Products
                 </h3>
@@ -84,13 +84,13 @@ const Features = () => {
                     className='cat'
                   >
                     {category.map((cat) => (
-                      <li
+                      <div
                         key={cat.id}
-                        className=' w-[139px] px-[10px]'
+                        className=''
                       >
                         <Link
                           href={'/about'}
-                          className=' rounded-[0.625rem] p-[2.875rem_1.6875rem_2.375rem_1.6875rem] flex items-start flex-col'
+                          className=' rounded-[0.625rem] p-[2.875rem_.6875rem_2.375rem_.6875rem] flex items-start flex-col hover:text-yellow-500 transition-all'
                         >
                           <span className=' block'>
                             <Image
@@ -107,7 +107,7 @@ const Features = () => {
                             </span>
                           </span>
                         </Link>
-                      </li>
+                      </div>
                     ))}
                   </Slider>
                 </div>
