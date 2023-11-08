@@ -1,7 +1,11 @@
 'use client';
 
 import Slider from 'react-slick';
-import second from '../assets/images/homepage-new-cat-3.png';
+import soda from '../assets/images/homepage-new-brand-img-3.png';
+import sausage from '../assets/images/homepage-new-brand-img-4.png';
+import tea from '../assets/images/homepage-new-brand-img-2.png';
+import pouch from '../assets/images/homepage-new-brand-img-1.png';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { IoChevronForwardOutline } from 'react-icons/io5';
@@ -42,15 +46,14 @@ const Features = () => {
   };
 
   const category = [
-    { name: 'New Snacks Release', id: 1, img: second, cat: 'FOODPOUCH' },
-    { name: 'Food Cupboard', id: 2, img: second, cat: 'ITEA JSC' },
-    { name: 'Fresh Meat Sausage', id: 3, img: second, cat: 'FARMART' },
-    { name: 'Soda Can Box', id: 4, img: second, cat: 'SODA BRAND' },
-    { name: 'Milks and Diaries', id: 5, img: second },
-    { name: 'Pet Foods', id: 6, img: second },
-    { name: 'Raw Meats', id: 7, img: second },
-    { name: 'Wines & Alcohols', id: 8, img: second },
-    { name: 'Bread Sweets', id: 9, img: second },
+    { name: 'New Snacks Release', id: 1, img: pouch, cat: 'FOODPOUCH' },
+    { name: 'Food Cupboard', id: 2, img: tea, cat: 'ITEA JSC' },
+    { name: 'Fresh Meat Sausage', id: 3, img: sausage, cat: 'FARMART' },
+    { name: 'Soda Can Box', id: 4, img: soda, cat: 'SODA BRAND' },
+    { name: 'Food Cupboard', id: 6, img: tea, cat: 'ITEA JSC' },
+    { name: 'New Snacks Release', id: 5, img: pouch, cat: 'FOODPOUCH' },
+    { name: 'Soda Can Box', id: 8, img: soda, cat: 'SODA BRAND' },
+    { name: 'Fresh Meat Sausage', id: 7, img: sausage, cat: 'FARMART' },
   ];
 
   return (
@@ -87,15 +90,17 @@ const Features = () => {
                       >
                         <Link
                           href={'/about'}
-                          className='bg-[#f7f7f6] rounded-[0.625rem] p-[2.875rem_1.6875rem_2.375rem_1.6875rem] flex items-center flex-col hove'
+                          className=' rounded-[0.625rem] p-[2.875rem_1.6875rem_2.375rem_1.6875rem] flex items-start flex-col'
                         >
-                          <span className='mb-[1.25rem] block'>
+                          <span className=' block'>
                             <Image
                               src={cat.img}
                               alt={cat.name}
                             />
                           </span>
-
+                          <h3 className='mt-[1.5625rem] text-[#999] font-[700] uppercase '>
+                            {cat.cat}
+                          </h3>
                           <span className='block'>
                             <span className='font-[700] leading-[1.5rem] text-[1.125rem] block text-center'>
                               {cat.name}
