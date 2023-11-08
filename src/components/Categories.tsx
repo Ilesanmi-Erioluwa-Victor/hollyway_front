@@ -52,7 +52,7 @@ const Categories = () => {
     { name: 'Bread Sweets', id: 9, img: second },
   ];
   return (
-    <section className='pt-[4.8125rem] pr-[0.3125rem] pb-[4.6875rem] pl-[0.3125rem] relative'>
+    <section className='pt-[4.8125rem] pr-[0.3125rem] pl-[0.3125rem] relative'>
       <div className='max-w-[1670px] relative mx-auto flex'>
         <div className='p-[0.625rem] flex relative w-full flex-wrap content-start'>
           <div className='w-full'>
