@@ -10,7 +10,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { IoChevronForwardOutline } from 'react-icons/io5';
 
-const Features = () => {
+const Top_Saver = () => {
   var settings = {
     dots: false,
     infinite: false,
@@ -81,7 +81,7 @@ const Features = () => {
                 <div className='relative flex flex-col gap-6'>
                   <Slider
                     {...settings}
-                    className='feature'
+                    className=''
                   >
                     {category.map((cat) => (
                       <div
@@ -120,4 +120,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default Top_Saver;
