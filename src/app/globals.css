@@ -101,6 +101,34 @@
   color: black !important;
 }
 
+.saver .slick-next,
+.saver .slick-prev {
+  top: -4% !important;
+  background: #f7f7f6 !important;
+  text-align: center !important;
+  border-radius: 0.2rem !important;
+}
+
+.saver .slick-prev {
+  left: 92% !important;
+  z-index: 1 !important;
+}
+
+.saver .slick-next{
+  right: 0 !important;
+}
+
+.saver .slick-prev,
+.slick-next {
+  width: 35px !important;
+  height: 35px !important;
+}
+
+.saver .slick-prev::before,
+.slick-next::before {
+  color: black !important;
+}
+
 .cat .slick-list {
   margin: 0 calc(-30px / 2) !important;
   padding-bottom: 7.5rem !important;

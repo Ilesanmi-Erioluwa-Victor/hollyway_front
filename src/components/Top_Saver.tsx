@@ -9,6 +9,7 @@ import pouch from '../assets/images/homepage-new-brand-img-1.png';
 import Link from 'next/link';
 import Image from 'next/image';
 import { IoChevronForwardOutline } from 'react-icons/io5';
+import { IoFlashOutline } from 'react-icons/io5';
 
 const Top_Saver = () => {
   var settings = {
@@ -57,14 +58,17 @@ const Top_Saver = () => {
   ];
 
   return (
-    <section className='w-[84.3125rem] px-[0.3125rem] relative'>
+    <section className='w-[84.3125rem]  relative mt-[4.375rem] mb-[6.25rem] p-[0.625rem_0.3125rem_0.625rem_0.3125rem]'>
       <div className='max-width-[104.375rem] flex mx-auto relative'>
         <article className='md:w-full flex relative'>
           <div className='p-[0.625rem] flex relative content-start w-full flex-wrap'>
             <div className='w-full'>
               <div className=' justify-start flex items-center'>
+                <span className='text-[1.875rem] leading-[2rem]'>
+                  <IoFlashOutline />
+                </span>
                 <h3 className='text-[1.875rem] leading-[1rem]'>
-                  Featured Products
+                  Top Products Today
                 </h3>
                 <Link
                   href={'/features'}
@@ -81,7 +85,7 @@ const Top_Saver = () => {
                 <div className='relative flex flex-col gap-6'>
                   <Slider
                     {...settings}
-                    className=''
+                    className='saver'
                   >
                     {category.map((cat) => (
                       <div

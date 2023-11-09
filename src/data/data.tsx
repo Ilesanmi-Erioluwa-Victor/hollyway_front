@@ -1,4 +1,4 @@
-import { IoIosFlash } from 'react-icons/io';
+import { IoFlashOutline } from 'react-icons/io5';
 import { AiOutlineTag } from 'react-icons/ai';
 interface Pages {
   name: string;
@@ -10,7 +10,7 @@ export const Nav_pages: Pages[] = [
   {
     name: 'Deals Today',
     id: 1,
-    icon: <IoIosFlash />,
+    icon: <IoFlashOutline />,
   },
 
   {
