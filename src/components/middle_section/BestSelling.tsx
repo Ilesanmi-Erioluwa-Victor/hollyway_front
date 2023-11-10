@@ -1,4 +1,9 @@
+'use client';
+
 import Link from 'next/link';
+import { ProductItem } from '../../components';
+import product from 'src/hooks/useProducts';
+import Slider from 'react-slick';
 
 const BestSelling = () => {
   const category = [
@@ -10,6 +15,40 @@ const BestSelling = () => {
     { name: 'Pet Foods', id: 6 },
     { name: 'Milks & Diaries', id: 7 },
   ];
+
+  var settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <div className='w-full'>
       <div>
@@ -33,7 +72,21 @@ const BestSelling = () => {
           </div>
         </section>
 
-        <section></section>
+        <section className='flex bg-[#fff]'>
+          <div className='p-0 w-full border pb-8'>
+            <Slider
+              {...settings}
+              className='best'
+            >
+              {product.map((cat) => (
+                <ProductItem
+                  key={cat.id}
+                  cat={cat}
+                />
+              ))}
+            </Slider>
+          </div>
+        </section>
       </div>
     </div>
   );
