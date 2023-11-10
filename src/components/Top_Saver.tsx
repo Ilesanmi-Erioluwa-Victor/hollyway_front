@@ -157,7 +157,7 @@ const Top_Saver = () => {
         <article className='md:w-full flex relative'>
           <div className='p-[0.625rem] flex relative content-start w-full flex-wrap'>
             <div className='w-full'>
-              <div className=' justify-start flex items-center'>
+              <div className=' justify-start flex items-center p-[0_0_2.8125rem_0]'>
                 <span className='text-[1.875rem] leading-[2rem]'>
                   <IoFlashOutline />
                 </span>
