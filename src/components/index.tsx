@@ -5,3 +5,4 @@ export { default as Categories } from './Categories';
 export { default as Features } from './Features';
 export { default as Top_Saver } from './Top_Saver';
 export { default as ProductItem } from './ProductItem';
+export { default as MiddleContent } from './middle_section';
