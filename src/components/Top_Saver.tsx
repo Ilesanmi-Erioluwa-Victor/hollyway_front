@@ -8,10 +8,9 @@ import cart4 from '../assets/images/cart4.jpg';
 import cart5 from '../assets/images/cart5.jpg';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { IoChevronForwardOutline } from 'react-icons/io5';
 import { IoFlashOutline } from 'react-icons/io5';
-import { AiFillStar } from 'react-icons/ai';
+import { ProductItem } from "../components" 
 
 const Top_Saver = () => {
   var settings = {
@@ -48,7 +47,7 @@ const Top_Saver = () => {
     ],
   };
 
-  const category = [
+  const product = [
     {
       name: 'Vimto Squash Remix Apple 1.5...',
       id: 1,
@@ -150,6 +149,8 @@ const Top_Saver = () => {
     },
   ];
 
+
+
   return (
     <section className='w-[84.3125rem]  relative mt-[4.375rem] mb-[6.25rem] p-[0.625rem_0.3125rem_0.625rem_0.3125rem]'>
       <div className='max-width-[104.375rem] flex mx-auto relative'>
@@ -180,46 +181,11 @@ const Top_Saver = () => {
                     {...settings}
                     className='saver'
                   >
-                    {category.map((cat) => (
-                      <div
+                    {product.map((cat) => (
+                      <ProductItem
                         key={cat.id}
-                        className=''
-                      >
-                        <Link
-                          href={'/about'}
-                          className='p-[1.25rem_1.5625rem_1.875rem] flex items-start flex-col hover:text-yellow-500 transition-all text-blue-400'
-                        >
-                          <span className=' block p-5'>
-                            <Image
-                              src={cat.img[0]}
-                              alt={cat.name}
-                            />
-                          </span>
-                          <span className='block px-5'>
-                            <span className='leading-[1.5rem] text-[0.9rem] block text-center'>
-                              {cat.name}
-                            </span>
-                          </span>
-                          <span className='block px-5'>
-                            <span className='leading-[1.5rem] text-[0.9rem] flex items-center gap-2'>
-                              <AiFillStar className='text-yellow-500' />{' '}
-                              {`(${cat.rating})`}
-                            </span>
-                          </span>
-
-                          <span className='block px-5'>
-                            <span className='leading-[1.5rem] text-[0.9rem] block gap-2'>
-                              {`${cat.weight}g`}
-                            </span>
-                          </span>
-
-                          <span className='block px-5 my-4'>
-                            <span className='leading-[1.5rem] text-[1.1rem] block'>
-                              {`$${cat.price}`}
-                            </span>
-                          </span>
-                        </Link>
-                      </div>
+                        cat={cat}
+                      />
                     ))}
                   </Slider>
                 </div>
