@@ -1,15 +1,17 @@
 'use client';
 
 import Slider from 'react-slick';
-import soda from '../assets/images/homepage-new-brand-img-3.png';
-import sausage from '../assets/images/homepage-new-brand-img-4.png';
-import tea from '../assets/images/homepage-new-brand-img-2.png';
-import pouch from '../assets/images/homepage-new-brand-img-1.png';
+import cart from '../assets/images/cart.jpg';
+import cart2 from '../assets/images/cart2.jpg';
+import card3 from '../assets/images/card3.jpg';
+import cart4 from '../assets/images/cart4.jpg';
+import cart5 from '../assets/images/cart5.jpg';
 
 import Link from 'next/link';
 import Image from 'next/image';
 import { IoChevronForwardOutline } from 'react-icons/io5';
 import { IoFlashOutline } from 'react-icons/io5';
+import { AiFillStar } from 'react-icons/ai';
 
 const Top_Saver = () => {
   var settings = {
@@ -47,14 +49,105 @@ const Top_Saver = () => {
   };
 
   const category = [
-    { name: 'New Snacks Release', id: 1, img: pouch, cat: 'FOODPOUCH' },
-    { name: 'Food Cupboard', id: 2, img: tea, cat: 'ITEA JSC' },
-    { name: 'Fresh Meat Sausage', id: 3, img: sausage, cat: 'FARMART' },
-    { name: 'Soda Can Box', id: 4, img: soda, cat: 'SODA BRAND' },
-    { name: 'Food Cupboard', id: 6, img: tea, cat: 'ITEA JSC' },
-    { name: 'New Snacks Release', id: 5, img: pouch, cat: 'FOODPOUCH' },
-    { name: 'Soda Can Box', id: 8, img: soda, cat: 'SODA BRAND' },
-    { name: 'Fresh Meat Sausage', id: 7, img: sausage, cat: 'FARMART' },
+    {
+      name: 'Vimto Squash Remix Apple 1.5...',
+      id: 1,
+      img: [card3, cart],
+      price: 6.0,
+      rating: 1,
+      weight: 454,
+      sku: '#VEG20957',
+      type: 'Organic',
+      Availability: 56,
+    },
+    {
+      name: 'Taylors of Harrogate Yorkshi...',
+      id: 2,
+      img: [cart, cart],
+      price: 10.5,
+      rating: 1,
+      weight: 200,
+      sku: '#VEG20957',
+      type: 'Organic',
+      Availability: 56,
+    },
+    {
+      name: 'Soft Mochi & Galeto Ice...',
+      id: 3,
+      img: [cart2, cart],
+      price: 10.5,
+      rating: 1,
+      weight: 200,
+      sku: '#VEG20957',
+      type: 'Organic',
+      Availability: 56,
+    },
+    {
+      name: 'Naked Noodle Egg Noodles Sin...',
+      id: 4,
+      img: [cart4, cart],
+      price: 10.5,
+      rating: 1,
+      weight: 500,
+      sku: '#VEG20957',
+      type: 'Organic',
+      Availability: 56,
+    },
+    {
+      name: 'Casillero Diablo Cabernet Sa...',
+      id: 5,
+      img: [card3, cart],
+      price: 16.9,
+      rating: 1,
+      weight: 500,
+      sku: '#VEG20957',
+      type: 'Organic',
+      Availability: 56,
+    },
+    {
+      name: 'Taylors of Harrogate Yorkshi...',
+      id: 6,
+      img: [cart5, cart],
+      price: 10.5,
+      rating: 1,
+      weight: 200,
+      sku: '#VEG20957',
+      type: 'Organic',
+      Availability: 56,
+    },
+    {
+      name: 'Soft Mochi & Galeto Ice...',
+      id: 7,
+      img: [cart2, cart],
+      price: 10.5,
+      rating: 1,
+      weight: 200,
+      sku: '#VEG20957',
+      type: 'Organic',
+      Availability: 56,
+    },
+    {
+      name: 'Naked Noodle Egg Noodles Sin...',
+      id: 8,
+      img: [cart4, cart],
+      price: 10.5,
+      rating: 1,
+      weight: 500,
+      sku: '#VEG20957',
+      type: 'Organic',
+      Availability: 56,
+    },
+    {
+      name: 'Casillero Diablo Cabernet Sa...',
+      id: 9,
+      img: [card3, cart],
+      price: 16.9,
+      rating: 1,
+      weight: 500,
+      sku: '#VEG20957',
+      type: 'Organic',
+      Availability: 56,
+    },
   ];
 
   return (
@@ -94,20 +187,35 @@ const Top_Saver = () => {
                       >
                         <Link
                           href={'/about'}
-                          className=' rounded-[0.625rem] p-[2.875rem_.6875rem_2.375rem_.6875rem] flex items-start flex-col hover:text-yellow-500 transition-all'
+                          className='p-[1.25rem_1.5625rem_1.875rem] flex items-start flex-col hover:text-yellow-500 transition-all text-blue-400'
                         >
-                          <span className=' block'>
+                          <span className=' block p-5'>
                             <Image
-                              src={cat.img}
+                              src={cat.img[0]}
                               alt={cat.name}
                             />
                           </span>
-                          <h3 className='mt-[1.5625rem] text-[#999] font-[700] uppercase '>
-                            {cat.cat}
-                          </h3>
-                          <span className='block'>
-                            <span className='font-[700] leading-[1.5rem] text-[1.125rem] block text-center'>
+                          <span className='block px-5'>
+                            <span className='leading-[1.5rem] text-[0.9rem] block text-center'>
                               {cat.name}
+                            </span>
+                          </span>
+                          <span className='block px-5'>
+                            <span className='leading-[1.5rem] text-[0.9rem] flex items-center gap-2'>
+                              <AiFillStar className='text-yellow-500' />{' '}
+                              {`(${cat.rating})`}
+                            </span>
+                          </span>
+
+                          <span className='block px-5'>
+                            <span className='leading-[1.5rem] text-[0.9rem] block gap-2'>
+                              {`${cat.weight}g`}
+                            </span>
+                          </span>
+
+                          <span className='block px-5 my-4'>
+                            <span className='leading-[1.5rem] text-[1.1rem] block'>
+                              {`$${cat.price}`}
                             </span>
                           </span>
                         </Link>
