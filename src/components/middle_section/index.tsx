@@ -1,6 +1,6 @@
 import Articles from './Articles';
 import BestSelling from './BestSelling';
-import Essential from './Essential';
+import Organic from './Organic';
 import Landing from './Landing';
 import Middle from './Middle';
 
@@ -15,7 +15,7 @@ const MiddleSection = () => {
             <BestSelling />
             <Landing />
             <Middle />
-            <Essential />
+            <Organic />
             <Articles />
           </section>
         </div>
