@@ -26,7 +26,42 @@
 </svg>; */
 }
 
+const data = [
+  {
+    id: 1,
+    name: 'Free Shipping',
+    sum: 'For all orders over $200',
+    img: '',
+  },
 
+  {
+    id: 2,
+    name: '1 & 1 Returns',
+    sum: 'Cancellation after 1 day',
+    img: '',
+  },
+
+  {
+    id: 3,
+    name: '100% Secure Payment',
+    sum: 'Guarantee secure payments',
+    img: '',
+  },
+
+  {
+    id: 4,
+    name: '24/7 Dedicated Support',
+    sum: 'Anywhere & anytime',
+    img: '',
+  },
+
+  {
+    id: 5,
+    name: 'Daily Offers',
+    sum: 'Discount up to 70% OFF',
+    img: '',
+  },
+];
 
 const Footer = () => {
   return (
@@ -43,7 +78,9 @@ const Footer = () => {
                 <div className='text-[1.125rem] font-[700] mb-[0.1875rem] tracking-[-0.0625rem]'>
                   Free Shipping
                 </div>
-                <div className="tracking-[-0.0313rem]">For all orders over $200</div>
+                <div className='tracking-[-0.0313rem]'>
+                  For all orders over $200
+                </div>
               </div>
             </section>
           </div>
