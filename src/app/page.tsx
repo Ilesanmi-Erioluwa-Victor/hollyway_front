@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Header, Hero, Categories, Features, Top_Saver, MiddleContent } from 'src/components';
+import { Header, Hero, Categories, Features, Top_Saver, MiddleContent, ProductItem2 } from 'src/components';
 
 export default function Home() {
   return (
@@ -10,6 +10,7 @@ export default function Home() {
       <Features />
       <Top_Saver />
       <MiddleContent />
+      <ProductItem2 />
     </>
   );
 }

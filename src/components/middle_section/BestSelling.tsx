@@ -21,7 +21,7 @@ const BestSelling = () => {
     infinite: false,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 2,
     initialSlide: 0,
     responsive: [
       {
@@ -53,19 +53,24 @@ const BestSelling = () => {
     <div className='w-full'>
       <div>
         <section className='flex bg-[#02010100] justify-start p-[0_0_2.5rem_0] items-center flex-wrap'>
-          <h2 className='mr-[3.9375rem] mb-0 text-[1.875rem] leading-[1em]'>
+          <h2 className='mr-[3.9375rem] mb-0 text-[1rem] lg:text-[1.475rem] leading-[1em] lg:mr-[.8rem]'>
             Best Seller
           </h2>
-          <div className='max-w-full'>
+          <div className='max-w-full hidden lg:block'>
             <ul className='flex items-center py-[0.25rem] flex-nowrap'>
               {category.map((cat) => (
                 <li
                   key={cat.id}
                   className={`${
                     cat?.name === 'All' && 'pl-0'
-                  } px-[1rem] relative shrink-0 hover:text-yellow-500 transition-all`}
+                  } px-[1rem] lg:px-[.5rem] relative shrink-0 hover:text-yellow-500 transition-all`}
                 >
-                  <Link href={'/all'}>{cat.name}</Link>
+                  <Link
+                    href={'/all'}
+                    className='lg:text-[.9rem]'
+                  >
+                    {cat.name}
+                  </Link>
                 </li>
               ))}
             </ul>

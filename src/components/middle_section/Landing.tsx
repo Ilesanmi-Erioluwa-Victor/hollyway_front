@@ -21,14 +21,14 @@ const Landing = () => {
     infinite: false,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 2,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 4,
+          slidesToScroll: 4,
           infinite: true,
         },
       },
@@ -53,7 +53,7 @@ const Landing = () => {
     <div className='w-full'>
       <div className='m-[6.25rem_0_0_0]'>
         <section className='flex bg-[#02010100] justify-start p-[0_0_2.5rem_0] items-center flex-wrap'>
-          <h2 className='mr-[3.9375rem] mb-0 text-[1.875rem] leading-[1em]'>
+          <h2 className='mr-[3.9375rem] mb-0 text-[1rem] lg:text-[1.475rem] leading-[1em] lg:mr-[.8rem]'>
             Landing
           </h2>
           <div className='max-w-full'>
@@ -63,9 +63,14 @@ const Landing = () => {
                   key={cat.id}
                   className={`${
                     cat?.name === 'All' && 'pl-0'
-                  } px-[1rem] relative shrink-0 hover:text-yellow-500 transition-all`}
+                  } px-[1rem] lg:px-[.5rem] relative shrink-0 hover:text-yellow-500 transition-all`}
                 >
-                  <Link href={'/all'}>{cat.name}</Link>
+                  <Link
+                    href={'/all'}
+                    className='lg:text-[.9rem]'
+                  >
+                    {cat.name}
+                  </Link>
                 </li>
               ))}
             </ul>

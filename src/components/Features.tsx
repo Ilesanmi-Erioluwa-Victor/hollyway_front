@@ -15,15 +15,15 @@ const Features = () => {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 3,
+    slidesToScroll: 3,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 4,
+          slidesToScroll: 4,
           infinite: true,
         },
       },
@@ -57,8 +57,8 @@ const Features = () => {
   ];
 
   return (
-    <section className='w-[84.3125rem] px-[0.3125rem] relative'>
-      <div className='max-width-[104.375rem] flex mx-auto relative'>
+    <section className='w-full px-[0.3125rem] relative'>
+      <div className='max-w-[104.375rem] flex mx-auto relative max-[1024px]:flex-wrap'>
         <article className='md:w-full flex relative'>
           <div className='p-[0.625rem] flex relative content-start w-full flex-wrap'>
             <div className='w-full'>

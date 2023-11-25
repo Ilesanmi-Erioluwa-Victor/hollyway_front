@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 {
   /* <svg
   xmlns='http://www.w3.org/2000/svg'
@@ -68,26 +70,36 @@ const Footer = () => {
     <footer className='relative border border-solid border-[#dcdcdc]'>
       <div>
         <div className='border-b border-b-[solid] border-b-[#dcdcdc] w-full px-[1.875rem]'>
-          <div className='flex items-center flex-wrap justify-between p-[3.5938rem_0_2.9688rem_0] mx-[-0.9375rem]'>
-            <section className='flex items-center px-[0.9375rem] py-[0.4688rem]'>
-              <div className='mr-[1.4375rem]'>
-                <span>Hello</span>
-              </div>
-
-              <div>
-                <div className='text-[1.125rem] font-[700] mb-[0.1875rem] tracking-[-0.0625rem]'>
-                  Free Shipping
+          <div className='flex items-center flex-wrap justify-between p-[57.5px_0_47.5px_0] mx-[-0.9375rem]'>
+            {data.map((data) => (
+              <section
+                className='flex items-center px-[0.9375rem] py-[0.4688rem]'
+                key={data.id}
+              >
+                <div className='mr-[1.4375rem]'>
+                  <span>Hello</span>
                 </div>
-                <div className='tracking-[-0.0313rem]'>
-                  For all orders over $200
+                <div>
+                  <div className='text-[1.125rem] font-[700] mb-[0.1875rem] tracking-[-0.0625rem]'>
+                    {data.name}
+                  </div>
+                  <div className='tracking-[-0.0313rem] text-[0.875rem] leading-[1.71429] wrap-break'>
+                    {data.sum}
+                  </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            ))}
           </div>
         </div>
       </div>
 
-      <section></section>
+      <section className='relative border border-solid border-[#dcdcdc]'>
+        <div className='px-[1.875rem] pt-[5rem] pb-[2.8125rem]'>
+          <div className="justify-around flex items-center flex-wrap mx-[-0.9375rem]">
+
+          </div>
+        </div>
+      </section>
       <section></section>
     </footer>
   );

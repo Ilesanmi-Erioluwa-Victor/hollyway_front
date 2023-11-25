@@ -14,14 +14,14 @@ const Top_Saver = () => {
     infinite: false,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 2,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 4,
+          slidesToScroll: 4,
           infinite: true,
         },
       },
@@ -44,8 +44,8 @@ const Top_Saver = () => {
   };
 
   return (
-    <section className='w-[84.3125rem]  relative mt-[4.375rem] mb-[6.25rem] p-[0.625rem_0.3125rem_0.625rem_0.3125rem]'>
-      <div className='max-width-[104.375rem] flex mx-auto relative'>
+    <section className='w-full relative mt-[4.375rem] mb-[6.25rem] p-[0.625rem_0.3125rem_0.625rem_0.3125rem]'>
+      <div className='max-w-[104.375rem] flex mx-auto relative'>
         <article className='md:w-full flex relative'>
           <div className='p-[0.625rem] flex relative content-start w-full flex-wrap'>
             <div className='w-full'>
