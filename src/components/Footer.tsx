@@ -10,6 +10,8 @@ import {
 } from 'react-icons/io5';
 import { footer_data } from 'src/data/footer.data';
 import Link from 'next/link';
+import Image from "next/image"
+import Payment from "../assets/images/payment.png"
 
 const data = [
   {
@@ -170,15 +172,36 @@ const Footer = () => {
                     </p>
                   </div>
                 </div>
-             
               </section>
             </article>
           </div>
         </div>
       </section>
 
-      <section className="py-[2.1875rem]">
-    <div></div>
+      <section className='py-[2.1875rem]'>
+        <div className='max-[1680px]:w-full max-[1680px]:px-[1.875rem] flex justify-between items-center'>
+          <div className='flex-1 text-left justify-start flex item-center'>
+            <div className='mr-[2.5rem] text-[#555] flex gap-1'>
+              &copy;{new Date().getFullYear()}
+              <b>Hollywayglobal</b>
+              All rights reserved
+            </div>
+          </div>
+
+          <div className="flex item-center">
+            <div>
+              <ul className='mx-[-0.1563rem] p-0'>
+                <li className='inline-block px-[0.1563rem]'>
+                  <Link href="#">
+                  <Image src={Payment} alt="payment"/>
+                  </Link>
+                </li>
+    </ul>
+            </div>
+          </div>
+
+          <div></div>
+        </div>
       </section>
     </footer>
   );
