@@ -192,7 +192,7 @@ const Footer = () => {
             <div>
               <ul className='mx-[-0.1563rem] p-0'>
                 <li className='inline-block px-[0.1563rem]'>
-                  <Link href="#">
+                  <Link href="#" className='block'>
                   <Image src={Payment} alt="payment"/>
                   </Link>
                 </li>
@@ -200,7 +200,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div></div>
+          <div className="flex flex-1 text-right justify-end items-center"/>
         </div>
       </section>
     </footer>
