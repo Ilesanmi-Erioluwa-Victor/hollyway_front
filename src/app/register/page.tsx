@@ -1,11 +1,9 @@
-"use client"
+'use client';
 
 import { ChangeEvent, useState } from 'react';
-
 import { useSnackbar } from 'notistack';
-
 import { useAppDispatch, useAppSelector } from 'src/redux/hooks';
-
+import { RegisterUser } from 'src/redux/services/user/user.types';
 
 const Register = () => {
   const { isLoading } = useAppSelector((state) => state.user);
@@ -14,7 +12,7 @@ const Register = () => {
 
   const { enqueueSnackbar } = useSnackbar();
 
-  const [data, setData] = useState({
+  const [data, setData] = useState<RegisterUser>({
     firstName: '',
     lastName: '',
     password: '',
