@@ -53,12 +53,12 @@ const Header = () => {
           </button>
         </form>
 
-        <p className='flex flex-col text-right'>
+        <div className='flex flex-col text-right'>
           <h2 className='text-[1.5rem] font-semibold leading-none'>
             08081495166
           </h2>
           <span className='text-sm text-gray-400'>Support 24/7</span>
-        </p>
+        </div>
 
         <div className='flex gap-5'>
           <p className='text-[1.5rem]'>

@@ -177,7 +177,7 @@ const Articles = () => {
               className='article'
             >
               {blog.map((blog) => (
-                <article className='w-[27.0625rem] px-[1.5625rem] border-l-[solid] border-l-[1px] border-l-[#eee]'>
+                <article className='w-[27.0625rem] px-[1.5625rem] border-l-[solid] border-l-[1px] border-l-[#eee]' key={blog.id}>
                   <div className='w-full '>
                     <div className='mb-[1.8125rem] relative'>
                       <Link
