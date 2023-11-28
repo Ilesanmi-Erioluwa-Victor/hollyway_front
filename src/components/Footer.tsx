@@ -1,3 +1,5 @@
+'use client';
+import { usePathname } from 'next/navigation';
 import { Fragment } from 'react';
 import { RiSpaceShipFill } from 'react-icons/ri';
 import { GiWaterRecycling } from 'react-icons/gi';
@@ -10,8 +12,8 @@ import {
 } from 'react-icons/io5';
 import { footer_data } from 'src/data/footer.data';
 import Link from 'next/link';
-import Image from "next/image"
-import Payment from "../assets/images/payment.png"
+import Image from 'next/image';
+import Payment from '../assets/images/payment.png';
 
 const data = [
   {
@@ -51,8 +53,14 @@ const data = [
 ];
 
 const Footer = () => {
+  const pathname = usePathname();
+  const path = ['/login', '/register'];
   return (
-    <footer className='relative border border-solid border-[#dcdcdc]'>
+    <footer
+      className={`relative border border-solid border-[#dcdcdc] ${
+        path.some((pat) => pathname.startsWith(pat)) ? 'hidden' : 'block'
+      } `}
+    >
       <section>
         <div className='border-b border-b-[solid] border-b-[#dcdcdc] w-full px-[1.875rem]'>
           <div className='flex items-center flex-wrap justify-between p-[57.5px_0_47.5px_0] mx-[-0.9375rem]'>
@@ -188,19 +196,25 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex item-center">
+          <div className='flex item-center'>
             <div>
               <ul className='mx-[-0.1563rem] p-0'>
                 <li className='inline-block px-[0.1563rem]'>
-                  <Link href="#" className='block'>
-                  <Image src={Payment} alt="payment"/>
+                  <Link
+                    href='#'
+                    className='block'
+                  >
+                    <Image
+                      src={Payment}
+                      alt='payment'
+                    />
                   </Link>
                 </li>
-    </ul>
+              </ul>
             </div>
           </div>
 
-          <div className="flex flex-1 text-right justify-end items-center"/>
+          <div className='flex flex-1 text-right justify-end items-center' />
         </div>
       </section>
     </footer>

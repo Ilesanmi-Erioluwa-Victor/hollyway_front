@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './globals.css';
 import { Footer } from 'src/components';
 import { Providers } from 'src/redux/Provider';
+import { SnackProviders } from 'src/components/SnackWrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,8 +23,10 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${inter.className} bg-[#fff]`}>
         <>
-          <Providers>{children}</Providers>
-          <Footer />
+          <SnackProviders>
+            <Providers>{children}</Providers>
+            <Footer />
+          </SnackProviders>
         </>
       </body>
     </html>

@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
-
+import user from './services/user/user.service';
 
 export const store = configureStore({
   reducer: {
-    
+    user,
   },
   devTools: process.env.NODE_ENV !== 'production',
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({}).concat([]),
+    getDefaultMiddleware({})
 });
 
 setupListeners(store.dispatch);
