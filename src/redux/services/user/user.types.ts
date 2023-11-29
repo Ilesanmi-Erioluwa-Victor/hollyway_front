@@ -10,7 +10,7 @@ export interface InitialStateUser {
   isLoading: boolean;
   user: User | null;
   error: any;
-  data: userToken | null;
+  data: userToken | any;
   password?: string | null;
   image?: string | null;
   updated_profile?: string | null;

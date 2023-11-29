@@ -1,7 +1,16 @@
+'use client';
+
 export const useToken = (token: string, id: string) => {
-  window.localStorage.setItem('userInfo', JSON.stringify({ token, id }));
+  if (typeof window !== 'undefined') {
+    window.localStorage.setItem('userInfo', JSON.stringify({ token, id }));
+  }
 };
 
-export const useStoredToken = window.localStorage.getItem('userInfo')
-  ? JSON.parse(window.localStorage.getItem('userInfo') as string)
-  : null;
+export const useStoredToken = () => {
+  if (typeof window !== 'undefined') {
+    const storedUserInfo = window.localStorage.getItem('userInfo');
+    return storedUserInfo ? JSON.parse(storedUserInfo) : null;
+  }
+
+  return null;
+};

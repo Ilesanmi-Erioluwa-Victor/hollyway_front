@@ -5,9 +5,9 @@ import { createAuthHeaders } from 'src/utils/authHeader';
 import {
   RegisterUser,
   InitialStateUser,
-  User
+  User,
 } from 'src/redux/services/user/user.types';
-import { useStoredToken } from "src/hooks/useLocalStorage"
+import { useStoredToken } from 'src/hooks/useLocalStorage';
 
 export const registerAction = createAsyncThunk(
   'user/register',
@@ -32,7 +32,6 @@ export const loginAction = createAsyncThunk(
     }
   }
 );
-
 
 const usersSlices = createSlice({
   name: 'users',
@@ -90,7 +89,6 @@ const usersSlices = createSlice({
       state.user = null;
       state.data = null;
       if (action?.payload) {
-        console.log("..............", action)
         state.error = action?.payload?.message;
       } else {
         state.error = action?.error;

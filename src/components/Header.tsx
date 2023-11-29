@@ -6,7 +6,7 @@ import Select from 'react-select';
 import { BsCart, BsSearch } from 'react-icons/bs';
 import { AiOutlineUser } from 'react-icons/ai';
 import { PagesHeader } from '.';
-
+import { User } from 'src/components/atoms';
 const Header = () => {
   const options = [
     { value: 'chocolate', label: 'Chocolate' },
@@ -28,6 +28,8 @@ const Header = () => {
   const handleMouseOut = () => {
     setShowEmptyCartMessage(false);
   };
+
+  const isLoggedIn = false;
 
   return (
     <nav className='flex flex-col w-full'>
@@ -60,10 +62,9 @@ const Header = () => {
           <span className='text-sm text-gray-400'>Support 24/7</span>
         </div>
 
-        <div className='flex gap-5'>
-          <p className='text-[1.5rem]'>
-            <AiOutlineUser />
-          </p>
+        <div className='flex gap-5 relative'>
+          {isLoggedIn ? <AiOutlineUser /> : <User />}
+
           <Link
             href={'/'}
             className='flex relative gap-5'

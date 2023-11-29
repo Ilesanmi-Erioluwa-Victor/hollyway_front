@@ -10,6 +10,11 @@
   box-sizing: border-box;
 }
 
+.PhoneInputInput {
+ border : 0 !important;
+ outline : 0 !important;
+}
+
 .top-border {
   border-top-color: transparent;
   border-left: 10px solid transparent;
