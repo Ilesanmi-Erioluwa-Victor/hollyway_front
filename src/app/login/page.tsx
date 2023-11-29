@@ -1,34 +1,24 @@
-"use client"
+'use client';
 
-import Link from "next/link"
-
-import { ChangeEvent, useState, useEffect } from 'react';
-
+import Link from 'next/link';
+import { ChangeEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
-
 import { useSnackbar } from 'notistack';
-
 import { useAppDispatch } from 'src/redux/hooks';
-
 import { loginAction } from 'src/redux/services/user/user.service';
-
 import { useToken } from 'src/hooks/useLocalStorage';
+import { Input } from 'src/components/atoms';
 
 const Login = () => {
-
-    const router = useRouter();
-
-    const dispatch = useAppDispatch();
-
+  const router = useRouter();
+  const dispatch = useAppDispatch();
   const { enqueueSnackbar } = useSnackbar();
-
   const [data, setData] = useState({
     password: '',
     email: '',
   });
 
-
-   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const name = e.target.name;
     const value = e.target.value;
     setData({ ...data, [name]: value.trim() });
@@ -44,16 +34,6 @@ const Login = () => {
       });
 
     try {
-      // const user = await login(data);
-      // if (user && user.status === 'success') {
-      //   const token = user?.token;
-      //   const id = user?.id;
-      //   userToken(token, id);
-      //   navigate('/user/account');
-      //   return enqueueSnackbar('You have successfully logged in', {
-      //     variant: 'success',
-      //   });
-      // }
       const resultAction = await dispatch(loginAction(data));
 
       if (loginAction.fulfilled.match(resultAction)) {
@@ -68,30 +48,18 @@ const Login = () => {
         }
       } else if (loginAction.rejected.match(resultAction)) {
         const error: any = resultAction.payload;
-        return enqueueSnackbar(error.message, {
+        return enqueueSnackbar(`${error.message}, please try again !`, {
           variant: 'error',
         });
       }
-    } catch (error: any) {
-      if (error?.code === 'ERR_NETWORK') {
-        return enqueueSnackbar(error?.message, {
-          variant: 'error',
-        });
-      }
-      return enqueueSnackbar(error?.response?.data?.message, {
-        variant: 'error',
-      });
+    } catch (err: any) {
+      throw err;
     }
   };
 
   return (
     <div className='flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8'>
       <div className='sm:mx-auto sm:w-full sm:max-w-md'>
-        <img
-          className='mx-auto h-10 w-auto'
-          src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
-          alt='Your Company'
-        />
         <h2 className='mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900'>
           Sign in to your account
         </h2>
@@ -103,47 +71,25 @@ const Login = () => {
             className='space-y-6'
             onSubmit={handleInputSubmit}
           >
-            <div>
-              <label
-                htmlFor='email'
-                className='block text-sm font-medium leading-6 text-gray-900'
-              >
-                Email address
-              </label>
-              <div className='mt-2'>
-                <input
-                  id='email'
-                  name='email'
-                  type='email'
-                  autoComplete='email'
-                  value={data.email}
-                  onChange={handleInputChange}
-                  required
-                  className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-                />
-              </div>
-            </div>
+            <Input
+              label='Email address'
+              id='email'
+              name='email'
+              type='email'
+              value={data.email}
+              onChange={handleInputChange}
+              inputClass={`block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
+            />
 
-            <div>
-              <label
-                htmlFor='password'
-                className='block text-sm font-medium leading-6 text-gray-900'
-              >
-                Password
-              </label>
-              <div className='mt-2'>
-                <input
-                  id='password'
-                  name='password'
-                  type='password'
-                  autoComplete='current-password'
-                  value={data.password}
-                  onChange={handleInputChange}
-                  required
-                  className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-                />
-              </div>
-            </div>
+            <Input
+              label='Password'
+              id='password'
+              name='password'
+              type='password'
+              value={data.password}
+              onChange={handleInputChange}
+              inputClass={`block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
+            />
 
             <div className='flex items-center justify-between'>
               <div className='flex items-center'>

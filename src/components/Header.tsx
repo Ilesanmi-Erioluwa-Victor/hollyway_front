@@ -55,7 +55,7 @@ const Header = () => {
           </button>
         </form>
 
-        <div className='flex flex-col text-right'>
+        <div className='hidden flex-col text-right min-[1150px]:flex'>
           <h2 className='text-[1.5rem] font-semibold leading-none'>
             08081495166
           </h2>

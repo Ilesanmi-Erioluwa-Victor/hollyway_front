@@ -16,7 +16,7 @@ export const registerAction = createAsyncThunk(
       const response = await apiClient.post('auth/register', data);
       return response.data;
     } catch (error: any) {
-      return rejectWithValue(error.response.data);
+      return rejectWithValue(error);
     }
   }
 );
@@ -28,7 +28,7 @@ export const loginAction = createAsyncThunk(
       const response = await apiClient.post('auth/login', data);
       return response.data;
     } catch (error: any) {
-      return rejectWithValue(error.response.data);
+      return rejectWithValue(error);
     }
   }
 );
@@ -67,6 +67,7 @@ const usersSlices = createSlice({
       } else {
         state.error = action?.error;
       }
+      console.log(action);
     });
 
     // login

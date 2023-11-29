@@ -8,8 +8,7 @@ import { RegisterUser } from 'src/redux/services/user/user.types';
 import { registerAction } from 'src/redux/services/user/user.service';
 import Link from 'next/link';
 import PhoneInput from 'react-phone-number-input';
-import 'react-phone-number-input/style.css';
-import Image from 'next/image';
+import { Input } from 'src/components/atoms';
 
 const Register = () => {
   const { isLoading } = useAppSelector((state) => state.user);
@@ -34,7 +33,8 @@ const Register = () => {
     setData({ ...data, [name]: value.trim() });
   };
 
-  const handlePhoneNumberChange = useCallback((value : string) => {
+  // used useCallback to avoid auto refresh of react-phone-number-input package reload
+  const handlePhoneNumberChange = useCallback((value: string) => {
     setData((prevData) => ({ ...prevData, mobile: value }));
   }, []);
 
@@ -47,20 +47,18 @@ const Register = () => {
         variant: 'error',
       });
     }
-    console.log(data)
 
     try {
       const resultAction = await dispatch(registerAction(data));
 
       if (registerAction.fulfilled.match(resultAction)) {
-        const user = resultAction.payload === 'success';
-
         if (resultAction?.payload.status === 'success') {
           router.push('/login');
         }
       } else if (registerAction.rejected.match(resultAction)) {
         const error: any = resultAction.payload;
-        return enqueueSnackbar(error.message, {
+
+        return enqueueSnackbar(`${error.message}, please try again !`, {
           variant: 'error',
         });
       }
@@ -91,85 +89,53 @@ const Register = () => {
             className='space-y-6'
             onSubmit={handleInputSubmit}
           >
-            <div>
-              <label
-                htmlFor='firstName'
-                className='block text-sm font-medium leading-6 text-gray-900'
-              >
-                firstName
-              </label>
-              <div className='mt-2'>
-                <input
-                  id='firstName'
-                  name='firstName'
-                  type='text'
-                  autoComplete='firstName'
-                  onChange={handleInputChange}
-                  value={data.firstName}
-                  className='block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-                />
-              </div>
-            </div>
+            <Input
+              label={'firstName'}
+              id={'firstName'}
+              inputClass={
+                'block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+              }
+              value={data.firstName}
+              onChange={handleInputChange}
+              type='text'
+              name={'firstName'}
+            />
 
-            <div>
-              <label
-                htmlFor='lastName'
-                className='block text-sm font-medium leading-6 text-gray-900'
-              >
-                last Name
-              </label>
-              <div className='mt-2'>
-                <input
-                  id='lastName'
-                  name='lastName'
-                  type='text'
-                  autoComplete='lastName'
-                  onChange={handleInputChange}
-                  value={data.lastName}
-                  className='block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-                />
-              </div>
-            </div>
+            <Input
+              label={'lastName'}
+              id={'lastName'}
+              inputClass={
+                'block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+              }
+              value={data.lastName}
+              onChange={handleInputChange}
+              type='text'
+              name={'lastName'}
+            />
 
-            <div>
-              <label
-                htmlFor='email'
-                className='block text-sm font-medium leading-6 text-gray-900'
-              >
-                Email address
-              </label>
-              <div className='mt-2'>
-                <input
-                  id='email'
-                  name='email'
-                  type='email'
-                  autoComplete='email'
-                  value={data.email}
-                  onChange={handleInputChange}
-                  className='block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-                />
-              </div>
-            </div>
+            <Input
+              label={'email'}
+              id={'email'}
+              inputClass={
+                'block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+              }
+              value={data.email}
+              onChange={handleInputChange}
+              type='email'
+              name={'email'}
+            />
 
-            <div>
-              <label
-                htmlFor='password'
-                className='block text-sm font-medium leading-6 text-gray-900'
-              >
-                Password
-              </label>
-              <div className='mt-2'>
-                <input
-                  id='password'
-                  name='password'
-                  type='password'
-                  autoComplete='current-password'
-                  onChange={handleInputChange}
-                  value={data.password}
-                  className='block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-                />
-              </div>
-            </div>
+            <Input
+              label={'password'}
+              id={'password'}
+              inputClass={
+                'block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+              }
+              value={data.password}
+              onChange={handleInputChange}
+              type='password'
+              name={'password'}
+            />
 
             <div>
               <label
@@ -189,15 +155,6 @@ const Register = () => {
                   type='text'
                   className='block w-full rounded-md border-0 p-[.5rem] pl-2 outline-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
                 />
-                {/* <input
-                  id='mobile'
-                  name='mobile'
-                  type='text'
-                  autoComplete='mobile'
-                  onChange={handleInputChange}
-                  value={data.mobile}
-                  className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-                /> */}
               </div>
             </div>
 

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'react-phone-number-input/style.css';
 import './globals.css';
 import { Footer } from 'src/components';
 import { Providers } from 'src/redux/Provider';
