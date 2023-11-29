@@ -48,11 +48,24 @@ const Login = () => {
         }
       } else if (loginAction.rejected.match(resultAction)) {
         const error: any = resultAction.payload;
+        if (error.response.status === 401) {
+         return enqueueSnackbar(error.response.data.message, {
+           variant: 'error',
+         });  
+        }
+
+          if (error.response.status === 404) {
+         return enqueueSnackbar(error.response.data.message, {
+           variant: 'error',
+         });  
+        }
+
         return enqueueSnackbar(`${error.message}, please try again !`, {
           variant: 'error',
         });
       }
     } catch (err: any) {
+      
       throw err;
     }
   };

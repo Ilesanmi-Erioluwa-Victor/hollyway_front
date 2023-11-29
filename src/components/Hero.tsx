@@ -49,9 +49,12 @@ const Hero = () => {
 
   return (
     <div className="bg-[url('../assets/images/hero.jpg')] bg-no-repeat bg-cover bg-center">
-      <section className='flex justify-between  w-full px-[calc(1vw_+_1rem)] py-[calc(1vh_+_2rem)] gap-8'>
-        <article className='w-[70%] relative h-[30rem]'>
-          <Slider {...settings} className='get' >
+      <section className='flex justify-between  w-full px-[calc(1vw_+_1rem)] py-[calc(1vh_+_2rem)] gap-8 flex-col min-[980px]:flex-row'>
+        <article className='w-full min-[980px]:w-[70%] relative h-[30rem]'>
+          <Slider
+            {...settings}
+            className='get'
+          >
             {products.map((product, index) => (
               <div
                 key={index}

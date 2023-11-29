@@ -3,18 +3,17 @@
 import Link from 'next/link';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { Nav_pages } from 'src/data/data';
+import { animated } from '@react-spring/web';
 
 const PagesHeader = () => {
   return (
-    <div className='flex gap-8 items-center w-full px-[calc(1vw_+_1rem)] py-[calc(1vh_+_2rem)] justify-between min-[1040px]:justify-normal'>
+    <div className='flex gap-8 items-center w-full px-[calc(1vw_+_1rem)] py-[calc(1vh_+_2rem)]'>
       <button className='flex justify-between items-center gap-4 bg-yellow-500 px-[2rem] py-2 rounded-md'>
         <span className='text-[2rem]'>
           <RxHamburgerMenu />
         </span>
         <h2>SHOP BY CATEGORY</h2>
       </button>
-
-      <div className='min-[1040px]:hidden'>hello</div>
 
       <ul className='hidden items-center gap-[2rem] min-[1040px]:flex'>
         {Nav_pages.map((page) => {

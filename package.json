@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.7.17",
     "@headlessui/tailwindcss": "^0.2.0",
     "@heroicons/react": "^2.0.18",
+    "@react-spring/web": "^9.7.3",
     "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.6.2",
     "next": "14.0.1",
